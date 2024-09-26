@@ -5,7 +5,7 @@ A lightweight and flexible health check package for FastAPI applications, specif
 Utilizing Boto3 and Azure SDK for Python, this module allows for custom logic creation for various cloud services, including S3 buckets and Azure Blob storage. While it does not include built-in service checkers, it offers a straightforward framework for users to add their own, ensuring minimal dependency bloat by allowing only necessary packages.
 
 ## Installation
-You can install the package using either pip:
+You can install the package using pip:
 
 ```bash
 pip install fastapi-cloud-healthcheck
@@ -14,6 +14,11 @@ pip install fastapi-cloud-healthcheck
 ## Getting Started
 Here’s a quick example to get you started with implementing health checks for your FastAPI application:
 
+Before you start, make sure to install the required package by running:
+```bash
+pip install fastapi-cloud-healthcheck-aws-s3bucket
+```
+Then, you can use the following code in your FastAPI application:
 ```python
 from fastapi import FastAPI
 from fastapi_cloud_healthcheck import HealthCheckFactory, create_health_check_route
@@ -120,7 +125,7 @@ If any errors occur during the checks, the response will return a status code of
 ## Available Modules
 Explore the available health check modules for this framework, designed to help you monitor the health of various services and systems:
 
-* [fastapi_cloud_healthcheck_aws_s3bucket]()
+* [fastapi_cloud_healthcheck_aws_s3bucket](https://github.com/yogeshselvarajan/fastapi-cloud-healthcheck-aws-s3bucket/blob/01cd0a494649aa0b580c03beaa3aedc24268da8b/fastapi_cloud_healthcheck_aws_s3bucket/bucket_check.py)
 
 If you've developed a public service module for this framework using any cloud service and would like to have it included in this list, please feel free to open a new issue in the repository. We will review your submission and add it to the list.
 
@@ -136,7 +141,7 @@ You can easily extend the core health check module to support additional service
 3. **Add to HealthCheckFactory**  
    Once your service is ready, integrate it into the `HealthCheckFactory` using the `main` file. This allows your custom health check to be easily used within the existing framework.
 
-For a more concrete example, refer to the [fastapi_cloud_healthcheck_aws_s3bucket]() module. It provides a detailed example of how to create and structure your own service to interface with the FastAPI health check system.
+For a more concrete example, refer to the [fastapi_cloud_healthcheck_aws_s3bucket](https://github.com/yogeshselvarajan/fastapi-cloud-healthcheck-aws-s3bucket/blob/01cd0a494649aa0b580c03beaa3aedc24268da8b/fastapi_cloud_healthcheck_aws_s3bucket/bucket_check.py) module. It provides a detailed example of how to create and structure your own service to interface with the FastAPI health check system.
 
 ### Contributing
 
