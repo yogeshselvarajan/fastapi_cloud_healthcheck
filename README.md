@@ -120,7 +120,7 @@ If any errors occur during the checks, the response will return a status code of
 ## Available Modules
 Explore the available health check modules for this framework, designed to help you monitor the health of various services and systems:
 
-* [fastapi_cloud_healthcheck_aws_s3bucket](https://github.com/jtom38/fastapi_healthcheck_sqlalchemy)
+* [fastapi_cloud_healthcheck_aws_s3bucket]()
 
 If you've developed a public service module for this framework using any cloud service and would like to have it included in this list, please feel free to open a new issue in the repository. We will review your submission and add it to the list.
 
@@ -128,7 +128,7 @@ If you've developed a public service module for this framework using any cloud s
 You can easily extend the core health check module to support additional services by creating a custom module. Follow the steps below to build your own health check service:
 
 1. **Implement the Interface**  
-   Create a new service that implements the [HealthCheckInterface](https://github.com/jtom38/fastapi_healthcheck/blob/master/fastapi_healthcheck/domain.py#L6) and inherits from [HealthCheckBase](https://github.com/jtom38/fastapi_healthcheck/blob/master/fastapi_healthcheck/service.py#L75). These provide the necessary structure for integrating your custom health check.
+   Create a new service that implements the [HealthCheckInterface](https://github.com/yogeshselvarajan/fastapi_cloud_healthcheck/blob/ac07ad1a6406520b28fd6b44e25daba6335434d5/fastapi_cloud_healthcheck/fastapi_cloud_healthcheck/core/interface.py) and inherits from [HealthCheckBase](https://github.com/yogeshselvarajan/fastapi_cloud_healthcheck/blob/ac07ad1a6406520b28fd6b44e25daba6335434d5/fastapi_cloud_healthcheck/fastapi_cloud_healthcheck/services/base.py). These provide the necessary structure for integrating your custom health check.
 
 2. **Build the Custom Class**  
    Design your class around the interface and base class, implementing the required methods to define the health check logic for your specific service based on the use case.
@@ -136,7 +136,7 @@ You can easily extend the core health check module to support additional service
 3. **Add to HealthCheckFactory**  
    Once your service is ready, integrate it into the `HealthCheckFactory` using the `main` file. This allows your custom health check to be easily used within the existing framework.
 
-For a more concrete example, refer to the [fastapi_cloud_healthcheck_aws_s3bucket](https://github.com/jtom38/fastapi_healthcheck_sqlalchemy/blob/master/fastapi_healthcheck_sqlalchemy/service.py) module. It provides a detailed example of how to create and structure your own service to interface with the FastAPI health check system.
+For a more concrete example, refer to the [fastapi_cloud_healthcheck_aws_s3bucket]() module. It provides a detailed example of how to create and structure your own service to interface with the FastAPI health check system.
 
 ### Contributing
 
