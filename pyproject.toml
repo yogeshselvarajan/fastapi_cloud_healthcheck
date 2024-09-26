@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-cloud-healthcheck"
-version = "0.1.0"
+version = "0.1.4"
 description = "This package provides a flexible and modular health check framework tailored for cloud services such as AWS and Azure, leveraging FastAPI for efficient routing and response handling."
 authors = ["Yogesh Selvarajan <yogeshselvarajan@gmail.com>"]
 license = "MIT"
@@ -16,16 +16,13 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.5,<4.0"
 fastapi = "^0.115.0"
 pydantic = "^2.9.2"
-boto3 = "^1.35.27"
-
-
-[tool.poetry.group.test.dependencies]
-pytest = "^8.3.3"
-requests-mock = "^1.12.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+
