@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-cloud-healthcheck"
-version = "0.1.4"
+version = "0.1.5"
 description = "This package provides a flexible and modular health check framework tailored for cloud services such as AWS and Azure, leveraging FastAPI for efficient routing and response handling."
 authors = ["Yogesh Selvarajan <yogeshselvarajan@gmail.com>"]
 license = "MIT"

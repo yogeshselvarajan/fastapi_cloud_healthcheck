@@ -9,14 +9,18 @@ def create_health_check_route(factory: HealthCheckFactory) -> Callable:
 
     def endpoint() -> JSONResponse:
         # Perform the health check and get the report
-        res = _factory.check()
+        health_report = _factory.check()
 
         # Determine the system health status and set the appropriate HTTP status code
-        if res['systemHealth']['status'] == HealthCheckStatusEnum.UNHEALTHY.value:
-            return JSONResponse(content=res, status_code=500)
+        system_health_status = health_report['systemHealth']['status']
 
-        # If the overall health is healthy, return with status code 200
-        return JSONResponse(content=res, status_code=200)
+        if system_health_status == HealthCheckStatusEnum.UNHEALTHY.value:
+            return JSONResponse(content=health_report, status_code=500)
+
+        elif system_health_status == HealthCheckStatusEnum.WARNING.value:
+            return JSONResponse(content=health_report, status_code=300)
+
+        return JSONResponse(content=health_report, status_code=200)
 
     return endpoint
 
